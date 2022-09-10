@@ -1,6 +1,8 @@
 # set up
 ```sh
-sh install.sh
+cd ~
+git clone git@github.com:kita21/dotfiles.git
+cd dotfiles
 
-source ~.zshrc
+sh set_up.sh
 ```

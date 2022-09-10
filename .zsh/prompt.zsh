@@ -1,14 +1,14 @@
-autoload -Uz colors && colors
-autoload -Uz vcs_info && vcs_info
+autoload -U vcs_info
+autoload -Uz add-zsh-hook
 
-# 変数展開設定
-setopt PROMPT_SUBST
-# 毎回実行関数
-precmd () { vcs_info }
+zstyle ':vcs_info:git*' formats '(%b)'
+
+update_git_info () { 
+  vcs_info
+  # 左に実行ユーザとgitブランチ表示
+  PROMPT="%F{yellow}[%n]${vcs_info_msg_0_}$%f "
+}
+add-zsh-hook precmd update_git_info
 
 # 右のカレンとディレクトリのフルパス表示
-RPROMPT="%{$fg[yellow]%}[%d]%{$reset_color%}"
-
-# 左に実行ユーザとgitブランチ表示
-zstyle ':vcs_info:git*' formats '(%b)'
-PROMPT="%{$fg[yellow]%}[%n]%{$reset_color%}%F{yellow}${vcs_info_msg_0_}$%f "
+RPROMPT="%F{yellow}[%d]%f"

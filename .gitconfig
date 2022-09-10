@@ -1,0 +1,43 @@
+[color]
+    ui = auto
+
+[fetch]
+    prune = true
+
+[pull]
+    rebase = false
+    ff = true # only
+
+[user]
+    name = kita21
+    email = xxxxx@gmail.com
+
+[alias]
+    a = add
+    ap = add -p # addする前に差分を確認する
+    b = branch
+    ba = branch -a
+    bm = branch -m
+    c = commit
+    cm = commit -m
+    cn = commit --no-verify
+    ca = commit --amend
+    can = commit --amend --no-edit
+    d = diff
+    dc = diff --cached
+    dn = diff --name-status
+    d1 = diff HEAD~
+    d2 = diff HEAD~~
+    d3 = diff HEAD~~~
+    d4 = diff HEAD~~~~
+    d5 = diff HEAD~~~~~
+    l = log
+    lp = log -p # 選択したコミットのファイル差分を確認
+    ln = log --name-status # name-onlyはstatusの表示を行わない
+    p = push
+    s = status
+    sw = switch
+    swc = switch --create
+
+[init]
+    defaultBranch = main
