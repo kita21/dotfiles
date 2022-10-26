@@ -26,3 +26,6 @@ autoload -Uz compinit && compinit
 if [ ! -f ${HOME}/.zshrc.zwc -o {$HOME}/.zshrc -nt ${HOME}/.zshrc.zwc ]; then
     zcompile ${HOME}/.zshrc
 fi
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+export PATH="/opt/homebrew/bin:$PATH"
