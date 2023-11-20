@@ -24,6 +24,7 @@
     ca = commit --amend
     can = commit --amend --no-edit
     d = diff
+    ds = diff --staged
     dc = diff --cached
     dn = diff --name-status
     d1 = diff HEAD~

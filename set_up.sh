@@ -50,7 +50,7 @@ fi
 if "$FLG_A" == "TRUE"; then
   echo "brew update & bundle"
   brew update
-  brew bundle
+  brew bundle --no-upgrade
 fi
 
 # 実行場所のディレクトリを取得
