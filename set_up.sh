@@ -44,7 +44,7 @@ is_installed() {
 }
 
 if ! is_installed "brew"; then
-  curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 if "$FLG_A" == "TRUE"; then
