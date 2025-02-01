@@ -21,11 +21,9 @@ setopt HIST_IGNORE_DUPS
 
 # 補完機能有効化
 autoload -Uz compinit && compinit
+source <(kubectl completion zsh)
 
 # zshrc.zwcが存在しない or zshrc.zwcがzshrcより古い場合にコンパイルする
 if [ ! -f ${HOME}/.zshrc.zwc -o {$HOME}/.zshrc -nt ${HOME}/.zshrc.zwc ]; then
     zcompile ${HOME}/.zshrc
 fi
-export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init -)"
-export PATH="/opt/homebrew/bin:$PATH"
