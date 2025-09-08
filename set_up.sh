@@ -56,15 +56,28 @@ fi
 # 実行場所のディレクトリを取得
 DOTFILES_DIR="$(pwd)"
 # 各設定ファイルを反映
-for f in .??*; do
-    [[ "$f" == ".git" ]] && continue
-    [[ "$f" == ".DS_Store" ]] && continue
-    ln -snfv ${DOTFILES_DIR}/${f} ${HOME}/${f}
-done
+echo "Creating symbolic links for dotfiles..."
 
-# デフォルトをzshにする
-echo 'chsh -s zsh'
-sudo chsh -s `which zsh`
+
+ln -snfv ${DOTFILES_DIR}/.gitconfig ${HOME}/.gitconfig
+# zsh
+ln -snfv ${DOTFILES_DIR}/.zshrc ${HOME}/.zshrc
+ln -snfv ${DOTFILES_DIR}/.zsh ${HOME}/.zsh
+# config
+ln -snfv ${DOTFILES_DIR}/.config/nvim ${HOME}/.config/nvim
+ln -snfv ${DOTFILES_DIR}/.config/tmux ${HOME}/.config/tmux
+
+
+# 現在のシェルがzshでなければzshに変更する
+current_shell=$(echo $SHELL)
+zsh_path=$(which zsh)
+if [ "$current_shell" != "$zsh_path" ]; then
+    echo "Current shell is $current_shell. Changing to zsh..."
+    sudo chsh -s "$zsh_path"
+    echo "Shell changed to zsh: $zsh_path"
+else
+    echo "Shell is already zsh: $current_shell"
+fi
 
 cat << END
 **************************************************
