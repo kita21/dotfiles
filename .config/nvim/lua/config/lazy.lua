@@ -21,21 +21,32 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-vim.cmd("colorscheme torte")
 
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
     { import = "plugins" },
   },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
+vim.cmd("colorscheme onedark")
 
 vim.opt.clipboard = "unnamedplus"
+-- 新しい行を改行で追加した時に、ひとつ上の行のインデントを引き継がせる
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+
+-- TABキーを押した時に、2文字分の幅を持ったTABが表示されます。
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+-- tabstop で設定した数の分の半角スペースが入力されます。
+vim.opt.expandtab = true
+-- 絶対行番号を表示する
+vim.opt.number = true
+vim.opt.termguicolors = true
+
 require("lsp")
 
 --- lspconfig
