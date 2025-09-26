@@ -1,0 +1,5 @@
+[settings]
+# terraformはtenvで管理する
+disable_tools = ["terraform", "node"]
+trusted_config_paths = ["~/dotfiles"]
+

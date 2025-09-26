@@ -66,7 +66,7 @@ ln -snfv ${DOTFILES_DIR}/.zsh ${HOME}/.zsh
 # config
 ln -snfv ${DOTFILES_DIR}/.config/nvim ${HOME}/.config/nvim
 ln -snfv ${DOTFILES_DIR}/.config/tmux ${HOME}/.config/tmux
-
+ln -snfv ${DOTFILES_DIR}/.config/mise ${HOME}/.config/mise
 
 # 現在のシェルがzshでなければzshに変更する
 current_shell=$(echo $SHELL)

@@ -20,7 +20,8 @@ return {
 	    "vimdoc",
 	    "yaml",
       "typescript",
-      "terraform"
+      "terraform",
+      "rust"
 	  }
 	}
 }
