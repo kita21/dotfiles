@@ -27,3 +27,4 @@ source <(kubectl completion zsh)
 if [ ! -f ${HOME}/.zshrc.zwc -o {$HOME}/.zshrc -nt ${HOME}/.zshrc.zwc ]; then
     zcompile ${HOME}/.zshrc
 fi
+export NVIM_LOG_FILE="/dev/null"
