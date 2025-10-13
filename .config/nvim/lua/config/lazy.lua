@@ -31,6 +31,7 @@ require("lazy").setup({
   checker = { enabled = true },
 })
 
+-- システムのクリップボードを使用する
 vim.opt.clipboard = "unnamedplus"
 -- 新しい行を改行で追加した時に、ひとつ上の行のインデントを引き継がせる
 vim.opt.autoindent = true
@@ -45,6 +46,12 @@ vim.opt.expandtab = true
 -- 絶対行番号を表示する
 vim.opt.number = true
 vim.opt.termguicolors = true
+-- 外部で変更があった際に自動で読み込み
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "WinEnter", "FocusGained", "BufEnter" }, {
+  pattern = "*",
+  command = "checktime",
+})
 
 require("lsp")
 require("config.keymaps")
