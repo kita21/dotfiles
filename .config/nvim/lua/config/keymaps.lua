@@ -1,5 +1,7 @@
 -- Insert Modeでjjを入力すると、ノーマルモードに戻る
 vim.keymap.set('i', 'jk', '<Esc>', { noremap = true, silent = true, desc = 'Return to Normal Mode' })
+vim.keymap.set('i', '<c-b>', '<left>', { noremap = true, silent = true, desc = 'Emacs like left' })
+vim.keymap.set('i', '<c-f>', '<right>', { noremap = true, silent = true, desc = 'Emacs like right' })
 
 -- LSP keymaps
 vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
