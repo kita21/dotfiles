@@ -1,5 +1,7 @@
 # homebrew
 export PATH="$PATH:/opt/homebrew/bin/"
+# pg
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # rancher desktop
 export PATH="~/.rd/bin:$PATH"
 # mise
