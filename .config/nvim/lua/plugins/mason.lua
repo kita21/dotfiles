@@ -1,7 +1,7 @@
 return {
   "mason-org/mason-lspconfig.nvim",
   opts = {
-    ensure_installed = { "lua_ls", "ts_ls", "terraformls" },
+    ensure_installed = { "lua_ls", "tsgo", "rust_analyzer", "pyright", "terraformls" },
     automatic_installation = true,
   },
   dependencies = {
