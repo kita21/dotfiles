@@ -58,6 +58,10 @@ return {
       'MeanderingProgrammer/render-markdown.nvim',
       opts = {
         file_types = { "markdown", "Avante" },
+        code = {
+          enabled = true,
+          language_name = true,
+        },
       },
       ft = { "markdown", "Avante" },
     },
