@@ -4,6 +4,9 @@ export PATH="$PATH:/opt/homebrew/bin/"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # rancher desktop
 export PATH="~/.rd/bin:$PATH"
+
+export PATH="$HOME/.local/bin:$PATH"
+
 # mise
 eval "$(mise activate zsh)"
 # gcloud
